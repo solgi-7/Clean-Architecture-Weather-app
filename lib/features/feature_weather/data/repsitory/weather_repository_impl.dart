@@ -21,6 +21,8 @@ class WeatherRepositoryImpl extends WheatherRepository {
       } else {
         return const DataFailed('Something Went Wrong . Please try again...');
       }
-    } catch (e) {}
+    } catch (e) {
+      return const DataFailed('Please check your internet ...');
+    }
   }
 }
