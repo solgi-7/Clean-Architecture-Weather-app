@@ -1,3 +1,6 @@
+import 'package:clean_architecture_weather_app/features/feature_weather/domain/entities/current_city_entity.dart';
+
+// ignore: must_be_immutable
 class CurrentCityModel extends CurrentCityEntity{
   Coord? coord;
   List<Weather>? weather;
