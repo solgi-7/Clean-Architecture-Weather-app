@@ -1,23 +1,7 @@
 import 'package:clean_architecture_weather_app/features/feature_weather/domain/entities/current_city_entity.dart';
 
-// ignore: must_be_immutable
-class CurrentCityModel extends CurrentCityEntity{
-  Coord? coord;
-  List<Weather>? weather;
-  String? base;
-  Main? main;
-  int? visibility;
-  Wind? wind;
-  Rain? rain;
-  Clouds? clouds;
-  int? dt;
-  Sys? sys;
-  int? timezone;
-  int? id;
-  String? name;
-  int? cod;
-
-  CurrentCityModel({
+class CurrentCityModel extends CurrentCityEntity {
+  const CurrentCityModel({
     Coord? coord,
     List<Weather>? weather,
     String? base,
@@ -33,28 +17,30 @@ class CurrentCityModel extends CurrentCityEntity{
     String? name,
     int? cod,
   }) : super(
-        base: base,
-        clouds: clouds,
-        cod: cod,
-        coord: coord,
-        dt: dt,
-        id: id,
-        main: main,
-        name: name,
-        rain: rain,
-        sys: sys,
-        timezone: timezone,
-        visibility: visibility,
+          coord: coord,
+          weather: weather,
+          base: base,
+          main: main,
+          visibility: visibility,
+          wind: wind,
+          rain: rain,
+          clouds: clouds,
+          dt: dt,
+          sys: sys,
+          timezone: timezone,
+          id: id,
+          name: name,
+          cod: cod,
         );
 
   factory CurrentCityModel.fromJson(Map<String, dynamic> json) {
     List<Weather> weather = [];
     if (json['weather'] != null) {
-      weather = <Weather>[];
       json['weather'].forEach((v) {
         weather.add(Weather.fromJson(v));
       });
     }
+
     return CurrentCityModel(
       coord: json['coord'] != null ? Coord.fromJson(json['coord']) : null,
       weather: weather,
@@ -119,7 +105,7 @@ class Weather {
 }
 
 class Main {
-  num? temp;
+  double? temp;
   double? feelsLike;
   double? tempMin;
   double? tempMax;

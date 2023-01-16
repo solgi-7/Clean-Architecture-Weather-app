@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:clean_architecture_weather_app/core/utils/constants.dart';
 import 'package:dio/dio.dart';
 
@@ -17,6 +18,7 @@ class ApiProvider {
         'units' : 'meteric'
        }
     );
+    log(response.data.toString());
     return response;
   }
 }
