@@ -1,4 +1,4 @@
 class Constants{
-  static const baseUrl = "https://home.openweathermap.org";
-  static const apiKeys1 = "62127d69ad86cdc3231034a49b4e2448";
+  static const baseUrl = "https://api.openweathermap.org";
+  static const apiKeys1 = "e35170a53d150f19e120761ef7da1b3c";
 }
